@@ -51,6 +51,7 @@ export default {
       }
     },
     methods:{
+      // 重置登录表单的信息
       ressetLoginForm(){
        this.$refs.loginFormRef.resetFields()
       // console.log(this.$refs)

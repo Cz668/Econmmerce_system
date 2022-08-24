@@ -4,6 +4,9 @@ import VueRouter from 'vue-router'
 //引入路由组件
 import login from '../pages/login'
 import home from '../pages/home'
+import Welcome from '../pages/Welcome'
+import users from '../pages/users'
+import roles from '../pages/roles'
 const router = new VueRouter({
     routes:[
         {
@@ -16,7 +19,26 @@ const router = new VueRouter({
         },
         {
             path:'/home',
-            component:home
+            component:home,
+            // 当访问/home时重定向为/Welcome
+            redirect:'/Welcome',
+            // redirect:'/users',
+            children: [
+                {
+                    path:'/Welcome',
+                    component:Welcome,
+
+                },
+                {
+                    path:'/users',
+                    component:users
+                },
+                {
+                    name:'roles',
+                    path:'/roles',
+                    component:roles
+                }
+            ]
         }
     ]
 })
