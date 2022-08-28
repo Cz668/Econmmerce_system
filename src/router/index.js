@@ -7,6 +7,7 @@ import home from '../pages/home'
 import Welcome from '../pages/Welcome'
 import users from '../pages/users'
 import roles from '../pages/roles'
+import rights from '../pages/rights'
 const router = new VueRouter({
     routes:[
         {
@@ -37,6 +38,11 @@ const router = new VueRouter({
                     name:'roles',
                     path:'/roles',
                     component:roles
+                },
+                {
+                    name:'rights',
+                    path:'/rights',
+                    component:rights
                 }
             ]
         }
