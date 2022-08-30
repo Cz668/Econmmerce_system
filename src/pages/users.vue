@@ -310,7 +310,7 @@ export default {
         this.$refs.addFromRef.resetFields()
       },
       // 添加用户发起post请求添加用户
-      addUser(){
+      async addUser(){
         // 判断所有输入的内容是否合法
         this.$refs.addFromRef.validate( async valid => {
           if(!valid) return this.$message.error('添加失败')

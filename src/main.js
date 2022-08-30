@@ -15,6 +15,8 @@ import router from './router'
 
 //按需引入
 import './plugins/element'
+// 引入vue-table-with-tree-grid插件实现树形结构
+import TreeTable from 'vue-table-with-tree-grid'
 
 //引入axios
 import axios from 'axios'
@@ -30,6 +32,8 @@ axios.interceptors.request.use(config => {
 
 Vue.prototype.$http = axios
 
+// 注册vue-table-tree-grid插件
+Vue.component('tree-table',TreeTable)
 //关闭Vue生产提示
 Vue.config.productionTip = false
 

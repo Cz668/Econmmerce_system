@@ -18,6 +18,8 @@
     "router": "^1.3.7",
     "vue": "^2.6.14",
     "vue-router": "^3.5.4",
+    "vue-table-tree-grid": "^0.2.4",
+    "vue-table-with-tree-grid": "^0.2.4",
     "vuex": "^3.6.2"
   },
   "devDependencies": {

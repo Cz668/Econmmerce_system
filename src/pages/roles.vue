@@ -7,7 +7,7 @@
     <el-breadcrumb-item >角色列表</el-breadcrumb-item>
   </el-breadcrumb>
 
-  <!-- 卡片试图 -->
+  <!-- 卡片示图 -->
   <el-card>
     <!-- 添加角色区 -->
     <el-row style="margin-bottom:15px;">
