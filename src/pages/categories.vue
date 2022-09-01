@@ -227,7 +227,7 @@ export default {
               expandTrigger: 'hover'
             },
             // 选中的父级分类的Id数组
-            selectCateKeys:[]
+            selectCateKeys:[],
         }
     },
     created(){
@@ -363,7 +363,7 @@ export default {
 }
 </script>
 
-<style lang="less" >
+<style lang="less" scoped>
   .el-cascader {
     width: 100%;
   }

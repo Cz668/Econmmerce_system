@@ -30,14 +30,16 @@ import {
     Select,
     Option,
     Result,
-    Cascader
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane
 } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Input)
-Vue.use(Message)
 Vue.use(Aside)
 Vue.use(Main)
 Vue.use(Header)
@@ -63,6 +65,10 @@ Vue.use(Select)
 Vue.use(Option)
 Vue.use(Result)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
 
 Vue.prototype.$confirm = MessageBox.confirm
+
 Vue.prototype.$message = Message
