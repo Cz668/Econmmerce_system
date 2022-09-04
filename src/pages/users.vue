@@ -279,7 +279,7 @@ export default {
     methods:{
       //监听页面显示条数的变化
       handleSizeChange(newSize){
-          console.log('newSize',newSize)
+          // console.log('newSize',newSize)
           this.queryInfo.pagesize = newSize
           this.getUsersList()
       },

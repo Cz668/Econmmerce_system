@@ -13,9 +13,11 @@
         <el-aside :width="isCollapse ? '65px' : '200px'">
           <!-- 折叠路由 -->
           <div class="toggle-button" @click="toggleCollapse">|||</div>
+          <!-- 在el-menu里删除了:default-active="$route.path" 
+          属性为了让add组件显示在goods上面-->
           <el-menu
-            :default-active="$route.path"
-            background-color="#333744"
+            :default-active="$route.path === '/goods/add' || $route.path === '/goods/edit' ? '/goods' : $route.path"
+            background-color="#333744" 
             text-color="#fff"
             active-text-color="#409EFF"
             unique-opened

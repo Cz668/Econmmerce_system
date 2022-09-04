@@ -104,6 +104,7 @@
               @close="handleClose(i2,scope.row)">
                 {{item2}}
               </el-tag>
+              <!-- 为每一个input绑定一个布尔值（inputVisible）以及数据（inputValue）这样就可以解决添加数据时发生的联动情况 -->
               <el-input
                 class="input-new-tag"
                 v-if="scope.row.inputVisible"
@@ -132,7 +133,7 @@
                 @click="showEditDialog(scope.row)"
                 size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
                 <el-button 
-                
+                @click="removeParamsById(scope.row)"
                 size="mini" type="danger" icon="el-icon-delete">删除</el-button>       
               </template>
               </el-table-column>
@@ -236,8 +237,9 @@ export default {
         if(res.meta.status !== 200)  return this.$message.error('获取商品分类数列表失败')
         this.cateList = res.data
       },
-      // 获取商品分类ID
+      // 联轴器选项selectCateKeys发生改变时重新调用getcategoriesList()
       cascaderChange(){
+        console.log('this.selectcascaderKeys',this.selectcascaderKeys)
         if(this.selectcascaderKeys.length === 0){
           this.selectcascaderKeys = []
           this.manyData = []
@@ -252,13 +254,13 @@ export default {
         this.getcategoriesList()
         // console.log('categoriesName',this.categoriesName)
       },
-      // 
+      // 获取动态/静态属性参数
       async getcategoriesList(){
         if(!this.selectcascaderKeys.length) return
         const {data:res} = await this.$http.get(`categories/${this.selectcascaderKeys[this.selectcascaderKeys.length-1]}/attributes`,{params:{sel:this.categoriesName}})
-        console.log('res2',res.data)
+        // console.log('res2',res.data)
         if(res.meta.status !== 200)  return this.$message.error('获取商品分类数列表失败')
-        this.$message.success('获取商品参数数列表成功')
+        this.$message.success('获取商品参数列表成功')
         res.data.forEach(item => {
           item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
           item.inputVisible = false
@@ -324,7 +326,7 @@ export default {
         }
         this.$message('已取消删除')
     },
-    // 
+    // 展示输入对话框
     showInput(scope){
       scope.inputVisible = true
       this.$nextTick(_ => {
@@ -375,11 +377,14 @@ export default {
 }
 </script>
 
-<style lang="less" >
+<style lang="less" scoped>
   .cat_opt {
     margin: 15px 0;
   }
 
+  .el-input {
+    width: 200px !important;
+  }
 
   
 </style>
