@@ -14,6 +14,7 @@ import params from '../pages/params'
 import add from '../pages/add'
 import edit from '../pages/edit'
 import orders from '../pages/orders'
+import reports from '../pages/reports'
 const router = new VueRouter({
     routes:[
         {
@@ -73,6 +74,10 @@ const router = new VueRouter({
                 {
                     path:'/orders',
                     component:orders
+                },
+                {
+                    path:'/reports',
+                    component:reports
                 }
             ]
         }
