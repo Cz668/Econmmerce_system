@@ -158,9 +158,7 @@ export default {
           attrs:[]
         },
         // 添加商品数据列表
-        editGoodsFrom:{
-          
-        },
+        editGoodsFrom:{},
         queryInfo:{
                 query:'',
                 //当前的页数
@@ -208,7 +206,6 @@ export default {
       // },
       async showEditGoodsDialog(row){
         const{data:res} = await this.$http.get(`goods/${row.goods_id}`)
-        this.editGoodsFrom.goods_cat = res.data.goods_cat
         // console.log('res',res)
         // console.log('this.editGoodsFrom.goods_cat',this.editGoodsFrom.goods_cat)
         if(res.meta.status !== 200) return this.$message.error('获取商品信息失败')

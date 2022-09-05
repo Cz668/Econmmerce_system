@@ -13,6 +13,7 @@ import categories from '../pages/categories'
 import params from '../pages/params'
 import add from '../pages/add'
 import edit from '../pages/edit'
+import orders from '../pages/orders'
 const router = new VueRouter({
     routes:[
         {
@@ -68,6 +69,10 @@ const router = new VueRouter({
                 {
                     path:'/goods/edit',
                     component:edit
+                },
+                {
+                    path:'/orders',
+                    component:orders
                 }
             ]
         }
